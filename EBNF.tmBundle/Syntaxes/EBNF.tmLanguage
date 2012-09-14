@@ -17,14 +17,6 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^\(\*</string>
-			<key>end</key>
-			<string>^\*\)</string>
-			<key>name</key>
-			<string>comment.block.ebnf</string>
-		</dict>
-		<dict>
-			<key>begin</key>
 			<string>^(\w(?:\w|\s|[\-_0-9])+\w)\s*=</string>
 			<key>captures</key>
 			<dict>
@@ -34,21 +26,52 @@
 					<string>variable.other.ebnf.non-terminal</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>{ include = '#single-definition'; }</string>
 			<key>end</key>
-			<string>;$</string>
+			<string>;</string>
 			<key>name</key>
 			<string>meta.ebnf.syntax-rule</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#single-definition</string>
+					<string>#comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#non-terminal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quote-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quote-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#special-sequence</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
 				</dict>
 			</array>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>comment</key>
+		<dict>
+			<key>begin</key>
+			<string>^\(\*</string>
+			<key>end</key>
+			<string>^\*\)</string>
+			<key>name</key>
+			<string>comment.block.ebnf</string>
+		</dict>
 		<key>double-quote-string</key>
 		<dict>
 			<key>begin</key>
@@ -74,18 +97,11 @@
 		<key>single-definition</key>
 		<dict>
 			<key>begin</key>
-			<string>.</string>
-			<key>comment</key>
-			<string>
-				{ include = '#non-terminal'; },
-				{ include = '#single-quote-string'; }, 
-				{ include = '#double-quote-string'; },
-				{ include = '#special-sequence'; },
-			</string>
+			<string>\b(\w|\s|[\-_0-9])*\s*</string>
 			<key>contentName</key>
 			<string>entity.name.type</string>
 			<key>end</key>
-			<string>\s*,|\s*;|\s*\|</string>
+			<string>;</string>
 			<key>patterns</key>
 			<array/>
 		</dict>
