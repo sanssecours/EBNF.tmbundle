@@ -8,9 +8,9 @@
 		<string>txt</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^\s*\(\*</string>
+	<string>\(\*</string>
 	<key>foldingStopMarker</key>
-	<string>^\s*\*\)</string>
+	<string>\*\)</string>
 	<key>name</key>
 	<string>EBNF</string>
 	<key>patterns</key>
@@ -24,6 +24,42 @@
 			<string>comment.block.ebnf</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>^(\w(?:\w|\s|[\-_0-9])+\w)\s*=</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.ebnf.non-terminal</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>;$</string>
+			<key>name</key>
+			<string>meta.ebnf.syntax-rule</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#single-definition</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>double-quote-string</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double</string>
+		</dict>
+		<key>non-terminal</key>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -35,14 +71,25 @@
 			<key>match</key>
 			<string>(\w(?:\w|\s|[\-_0-9])*\w)</string>
 		</dict>
+		<key>single-definition</key>
 		<dict>
 			<key>begin</key>
-			<string>"</string>
+			<string>.</string>
+			<key>comment</key>
+			<string>
+				{ include = '#non-terminal'; },
+				{ include = '#single-quote-string'; }, 
+				{ include = '#double-quote-string'; },
+				{ include = '#special-sequence'; },
+			</string>
+			<key>contentName</key>
+			<string>entity.name.type</string>
 			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double</string>
+			<string>\s*,|\s*;|\s*\|</string>
+			<key>patterns</key>
+			<array/>
 		</dict>
+		<key>single-quote-string</key>
 		<dict>
 			<key>begin</key>
 			<string>'</string>
@@ -51,12 +98,7 @@
 			<key>name</key>
 			<string>string.quoted.single</string>
 		</dict>
-		<dict>
-			<key>begin</key>
-			<string>'</string>
-			<key>end</key>
-			<string>'</string>
-		</dict>
+		<key>special-sequence</key>
 		<dict>
 			<key>begin</key>
 			<string>\?</string>
@@ -65,7 +107,7 @@
 			<key>name</key>
 			<string>entity.other.attribute-name</string>
 		</dict>
-	</array>
+	</dict>
 	<key>scopeName</key>
 	<string>source.ebnf</string>
 	<key>uuid</key>

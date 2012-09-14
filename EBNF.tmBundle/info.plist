@@ -4,6 +4,12 @@
 <dict>
 	<key>name</key>
 	<string>EBNF</string>
+	<key>ordering</key>
+	<array>
+		<string>D9954069-097B-4361-818D-EF4986D442E7</string>
+		<string>CC8E6F23-EB46-4169-B2A7-5FC28F768CAF</string>
+		<string>374455B9-472C-4868-BC7B-D17B1827B874</string>
+	</array>
 	<key>uuid</key>
 	<string>80532769-DEAA-473C-8655-5A2A7332D167</string>
 </dict>
