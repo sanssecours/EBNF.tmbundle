@@ -1,0 +1,29 @@
+(* EBNF-Grammar for a simple C like language *)
+
+program      = statement               |
+               input, statement        |
+               input, output statement |
+               output, statement;
+
+statement    = if statement                    |
+               if statement, "else", statement |
+               "while", paren expr, statement  |
+               "{", { statement }, "}"         |
+               expr, ";"                       |
+               "assert", parem_expr, ";"       |
+               ";";
+
+if statement = "if", paren expr, statement;
+paren expr   = "(", expr , ")";
+expr         = test | id, "=", expr | "!", expr;
+test         = sum | sum, "<", sum | sum, "==", sum;
+sum          = term | sum, "+", term | sum, "-", term;
+term         = id | int | paren expr;
+num          = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+int          = numint | num;
+id           = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" |
+               "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" |
+               "w" | "x" | "y" | "z" ;
+list of ids  = id | id, list of ids;
+input        = "input", list of ids, ";";
+output       = "output", list of ids, ";";
