@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>EBNF preferences</string>
+	<string>Symbol List</string>
 	<key>scope</key>
 	<string>source.ebnf</string>
 	<key>settings</key>
