@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Syntax-Rules</string>
+	<string>Pairs</string>
 	<key>scope</key>
 	<string>meta.ebnf.syntax-rule</string>
 	<key>settings</key>
