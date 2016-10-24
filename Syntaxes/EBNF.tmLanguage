@@ -10,6 +10,8 @@
 	<string>\(\*</string>
 	<key>foldingStopMarker</key>
 	<string>\*\)</string>
+	<key>keyEquivalent</key>
+	<string>^~E</string>
 	<key>name</key>
 	<string>EBNF</string>
 	<key>patterns</key>
