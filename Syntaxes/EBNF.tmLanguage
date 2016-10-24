@@ -28,13 +28,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function</string>
+					<string>entity.name.function.ebnf</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>;</string>
 			<key>name</key>
-			<string>meta.ebnf.syntax-rule</string>
+			<string>meta.syntax-rule.ebnf</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -78,7 +78,7 @@
 			<key>end</key>
 			<string>"</string>
 			<key>name</key>
-			<string>string.quoted.double</string>
+			<string>string.quoted.double.ebnf</string>
 		</dict>
 		<key>non-terminal</key>
 		<dict>
@@ -87,7 +87,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.ebnf.non-terminal</string>
+					<string>variable.other.non-terminal.ebnf</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -100,7 +100,7 @@
 			<key>end</key>
 			<string>'</string>
 			<key>name</key>
-			<string>string.quoted.single</string>
+			<string>string.quoted.single.ebnf</string>
 		</dict>
 		<key>special-sequence</key>
 		<dict>
@@ -109,7 +109,7 @@
 			<key>end</key>
 			<string>\?</string>
 			<key>name</key>
-			<string>entity.other.attribute-name</string>
+			<string>entity.other.attribute-name.ebnf</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
