@@ -5,13 +5,11 @@
 	<key>name</key>
 	<string>Symbol List</string>
 	<key>scope</key>
-	<string>source.ebnf</string>
+	<string>source.ebnf entity.name.function.ebnf</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
-		<key>symbolTransformation</key>
-		<string></string>
 	</dict>
 	<key>uuid</key>
 	<string>CC8E6F23-EB46-4169-B2A7-5FC28F768CAF</string>
