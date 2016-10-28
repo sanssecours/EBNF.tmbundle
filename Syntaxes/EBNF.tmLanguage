@@ -81,6 +81,36 @@
 			<key>name</key>
 			<string>string.quoted.double.ebnf</string>
 		</dict>
+		<key>group</key>
+		<dict>
+			<key>begin</key>
+			<string>\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.group.begin.ebnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.group.end.ebnf</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#subrules</string>
+				</dict>
+			</array>
+		</dict>
 		<key>non-terminal</key>
 		<dict>
 			<key>match</key>
@@ -232,6 +262,10 @@
 				<dict>
 					<key>include</key>
 					<string>#repetition</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#group</string>
 				</dict>
 				<dict>
 					<key>include</key>
