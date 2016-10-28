@@ -29,6 +29,7 @@ output       = "output", list of ids, ";";
 
 (* Various Rules *)
 
-id without z = id - "z";
-space        = ? ASCII character 32 ?;
-something    = foo, ( bar );
+id without z  = id - "z";
+space         = ? ASCII character 32 ?;
+something     = foo, ( bar );
+quoted string = '"text"';
