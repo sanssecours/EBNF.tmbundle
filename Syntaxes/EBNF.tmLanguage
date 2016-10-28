@@ -51,6 +51,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#non-terminal</string>
 				</dict>
 				<dict>
@@ -100,6 +104,23 @@
 			</dict>
 			<key>match</key>
 			<string>(\w(?:\w|\s|[\-_0-9])*\w)</string>
+		</dict>
+		<key>operator</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator-alternative</string>
+				</dict>
+			</array>
+		</dict>
+		<key>operator-alternative</key>
+		<dict>
+			<key>match</key>
+			<string>\|</string>
+			<key>name</key>
+			<string>keyword.operator.alternative.ebnf</string>
 		</dict>
 		<key>single-quote-string</key>
 		<dict>
