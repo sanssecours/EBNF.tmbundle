@@ -22,13 +22,18 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(\b(?:\w|\s|[\-_0-9])+\b)\s*=</string>
+			<string>^\s*(\b(?:\w|\s|[\-_0-9])+\b)\s*(=)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.ebnf</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignement.ebnf</string>
 				</dict>
 			</dict>
 			<key>end</key>
