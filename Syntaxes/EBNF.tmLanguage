@@ -94,16 +94,10 @@
 		</dict>
 		<key>non-terminal</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>variable.other.non-terminal.ebnf</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>(\w(?:\w|\s|[\-_0-9])*\w)</string>
+			<string>\w(?:\w|\s|[\-_0-9])*\w</string>
+			<key>name</key>
+			<string>variable.other.non-terminal.ebnf</string>
 		</dict>
 		<key>operator</key>
 		<dict>
