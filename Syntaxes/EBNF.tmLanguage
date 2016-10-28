@@ -114,7 +114,7 @@
 		<key>non-terminal</key>
 		<dict>
 			<key>match</key>
-			<string>\w(?:\w|\s|[\-_0-9])*\w</string>
+			<string>\w[\w\-_0-9]*\w</string>
 			<key>name</key>
 			<string>variable.other.non-terminal.ebnf</string>
 		</dict>
@@ -217,6 +217,24 @@
 				</dict>
 			</array>
 		</dict>
+		<key>repetition-numbered</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.integer.ebnf</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.repetition.ebnf</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\d+)\s*(\*)</string>
+		</dict>
 		<key>single-quote-string</key>
 		<dict>
 			<key>begin</key>
@@ -266,6 +284,10 @@
 				<dict>
 					<key>include</key>
 					<string>#group</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#repetition-numbered</string>
 				</dict>
 				<dict>
 					<key>include</key>
