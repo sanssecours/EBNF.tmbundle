@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>contactName</key>
+	<string>Arne Schroppe</string>
 	<key>description</key>
 	<string>Support for &lt;a href="https://en.wikipedia.org/wiki/Extended_Backus–Naur_Form"&gt;Extend Backus-Naur Form&lt;/a&gt;, a meta-syntax notation used to describe context free grammars.</string>
 	<key>name</key>
