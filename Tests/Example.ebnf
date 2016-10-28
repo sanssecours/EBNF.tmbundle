@@ -5,12 +5,11 @@ program      = statement               |
                input, output statement |
                output, statement;
 
-statement    = if statement                    |
-               if statement, "else", statement |
-               "while", paren expr, statement  |
-               "{", { statement }, "}"         |
-               expr, ";"                       |
-               "assert", parem_expr, ";"       |
+statement    = if statement [ "else", statement ] |
+               "while", paren expr, statement     |
+               "{", { statement }, "}"            |
+               expr, ";"                          |
+               "assert", parem_expr, ";"          |
                ";";
 
 if statement = "if", paren expr, statement;

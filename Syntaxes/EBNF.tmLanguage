@@ -56,23 +56,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#operator</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#non-terminal</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#single-quote-string</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#double-quote-string</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#special-sequence</string>
+					<string>#subrules</string>
 				</dict>
 			</array>
 		</dict>
@@ -112,6 +96,10 @@
 					<key>include</key>
 					<string>#operator-alternative</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator-concatenation</string>
+				</dict>
 			</array>
 		</dict>
 		<key>operator-alternative</key>
@@ -120,6 +108,73 @@
 			<string>\|</string>
 			<key>name</key>
 			<string>keyword.operator.alternative.ebnf</string>
+		</dict>
+		<key>operator-concatenation</key>
+		<dict>
+			<key>match</key>
+			<string>,</string>
+			<key>name</key>
+			<string>keyword.operator.concatenation.ebnf</string>
+		</dict>
+		<key>optional</key>
+		<dict>
+			<key>begin</key>
+			<string>\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.optional.begin.ebnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\]</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.optional.end.ebnf</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#subrules</string>
+				</dict>
+			</array>
+		</dict>
+		<key>repetition</key>
+		<dict>
+			<key>begin</key>
+			<string>{</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.repetition.begin.ebnf</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.repetition.end.ebnf</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#subrules</string>
+				</dict>
+			</array>
 		</dict>
 		<key>single-quote-string</key>
 		<dict>
@@ -138,6 +193,40 @@
 			<string>\?</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.ebnf</string>
+		</dict>
+		<key>subrules</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#optional</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#repetition</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#non-terminal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quote-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quote-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#special-sequence</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
