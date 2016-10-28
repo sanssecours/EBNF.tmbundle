@@ -100,6 +100,10 @@
 					<key>include</key>
 					<string>#operator-concatenation</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator-exception</string>
+				</dict>
 			</array>
 		</dict>
 		<key>operator-alternative</key>
@@ -115,6 +119,13 @@
 			<string>,</string>
 			<key>name</key>
 			<string>keyword.operator.concatenation.ebnf</string>
+		</dict>
+		<key>operator-exception</key>
+		<dict>
+			<key>match</key>
+			<string>-</string>
+			<key>name</key>
+			<string>keyword.operator.exception.ebnf</string>
 		</dict>
 		<key>optional</key>
 		<dict>
