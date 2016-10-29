@@ -39,7 +39,8 @@ Fortran 66 continuation line = character - "C",
                                character - (" " | "0"),
                                66 * [character] ;
 first rule in line = "This works"; second rule in line =
-  "This works too";
+  "This works too"; another rule = (* We can insert comments everywhere *)
+  first rule in line;
 
 (* Invalid Sequences *)
 
