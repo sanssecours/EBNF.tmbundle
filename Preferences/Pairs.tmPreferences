@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Syntax-Rules</string>
+	<string>Pairs</string>
 	<key>scope</key>
-	<string>meta.ebnf.syntax-rule</string>
+	<string>source.ebnf</string>
 	<key>settings</key>
 	<dict>
 		<key>highlightPairs</key>
@@ -44,6 +44,10 @@
 			<array>
 				<string>'</string>
 				<string>'</string>
+			</array>
+			<array>
+				<string>?</string>
+				<string>?</string>
 			</array>
 		</array>
 	</dict>

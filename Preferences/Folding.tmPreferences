@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Folding</string>
+	<key>scope</key>
+	<string>source.ebnf</string>
+	<key>settings</key>
+	<dict>
+		<key>foldingIndentedBlockIgnore</key>
+		<string>(?x)
+  # Ignore lines that do not start with a new rule or a comment.
+  ^(?![^=;]+=|\s*\(\*)</string>
+		<key>foldingIndentedBlockStart</key>
+		<string>(?x)
+  # Match rules that continue over multiple lines. These rules contain no
+  # terminator symbol.
+  ^[^=;]+=               # A rule definition followed by
+  ([^;]|;\s*(?!\*\(|$))* # non-terminator characters.
+  $</string>
+		<key>foldingStartMarker</key>
+		<string>(?x)
+  # Match comment begin symbols, but ignore the invalid sequence “(*)”.
+  \(\*(?!\))</string>
+		<key>foldingStopMarker</key>
+		<string>(?x)
+  # Match comment end symbols, but ignore the invalid sequence “(*)”.
+  (?&lt;!\()\*\)</string>
+	</dict>
+	<key>uuid</key>
+	<string>A8B6FE86-4F32-42A5-B131-996D39FBE856</string>
+</dict>
+</plist>
